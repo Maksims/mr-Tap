@@ -1,0 +1,60 @@
+{
+  "name": "mr-tap",
+  "version": "0.1.0",
+  "description": "A tap library, abstracts away from mouse/touch providing source agnostic sync access to the user input.",
+  "type": "module",
+  "main": "src/index.js",
+  "browser": "dist/mr-tap.min.js",
+  "module": "dist/mr-tap.module.min.js",
+  "scripts": {
+    "docs": "jsdoc2md --partial ./other/tmpl/*.hbs --files ./src/index.js ./src/tap.js > ./API.md",
+    "rollup": "rollup ./src/index.js --file ./dist/mr-tap.min.js --format es",
+    "rollup:module": "rollup ./src/index.js --file ./dist/mr-tap.module.min.js --format es",
+    "babel": "babel --config-file ./other/babel.config.json --out-file ./dist/mr-tap.min.js ./dist/mr-tap.min.js",
+    "babel:module": "babel --config-file ./other/babel-module.config.json --out-file ./dist/mr-tap.module.min.js ./dist/mr-tap.module.min.js",
+    "terser": "terser --compress --mangle --output ./dist/mr-tap.min.js -- ./dist/mr-tap.min.js",
+    "terser:module": "terser --compress --mangle --output ./dist/mr-tap.module.min.js -- ./dist/mr-tap.module.min.js",
+    "escheck": "es-check es6 ./dist/mr-tap.min.js",
+    "escheck:module": "es-check --module es6 ./dist/mr-tap.module.min.js",
+    "build": "npm run rollup && npm run rollup:module && npm run babel && npm run babel:module && npm run terser && npm run terser:module && npm run docs && npm run escheck && npm run escheck:module",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Maksims/mr-Tap.git"
+  },
+  "keywords": [
+    "mouse",
+    "touch",
+    "tap",
+    "taps",
+    "user input",
+    "gamedev"
+  ],
+  "author": {
+    "name": "Maksims Mihejevs",
+    "email": "core@moka.co",
+    "url": "https://twitter.com/mrmaxm"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/Maksims"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maksims/mr-Tap/issues"
+  },
+  "homepage": "https://github.com/Maksims/mr-Tap#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.12.11",
+    "babel-plugin-remove-import-export": "^1.1.1",
+    "es-check": "^5.2.3",
+    "jsdoc-to-markdown": "^6.0.1",
+    "rollup": "^2.50.2",
+    "terser": "^5.5.1"
+  }
+}

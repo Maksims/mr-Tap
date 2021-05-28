@@ -1,0 +1,29 @@
+{
+    "babelrc": false,
+    "comments": false,
+    "compact": true,
+    "minified": true,
+    "presets": [
+        [
+            "@babel/preset-env", {
+                "bugfixes": true,
+                "loose": true,
+                "modules": false,
+                "targets": {
+                    "esmodules": true
+                }
+            }
+        ]
+    ],
+    "plugins": [
+        [
+            "@babel/plugin-proposal-class-properties", {
+                "loose": true
+            },
+        ], [
+            "babel-plugin-remove-import-export", {
+                "removeExport": true
+            }
+        ]
+    ]
+}
