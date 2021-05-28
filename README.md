@@ -9,6 +9,10 @@ Providing sync access instead of event based, for best usage in real-time applic
 
 ## :rocket: Install
 
+module: https://cdn.jsdelivr.net/npm/mr-tap/dist/mr-tap.module.min.js  
+nomodule: https://cdn.jsdelivr.net/npm/mr-tap/dist/mr-tap.min.js
+
+
 ```bash
 npm install mr-observer
 ```
