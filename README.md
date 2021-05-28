@@ -163,7 +163,7 @@ Each tap is instantiated by the Taps interface, and provided through iterators. 
 
 Tap has states with two branching scenarios:
 
-Click: `start` > `click + up`
+Click: `start` > `click + up`  
 Drag: `start` > `dragstart + drag` > `drag` > `dragend + drag + up`
 
 
@@ -171,10 +171,9 @@ Drag: `start` > `dragstart + drag` > `drag` > `dragend + drag + up`
 
 `start` - every tap starts with a start state.
 
-`click` - some taps if not moved from initial position and have not been held for too long, on `up` state, will be considered `click`.
-
-`dragstart` - some taps if moved from initial position or have been held for some time, will enter `drag` state, and once be in `dragstart` state.
-`drag` - once tap is in `dragstart` state, it will be in `drag` state till the end of a tap.
+`click` - some taps if not moved from initial position and have not been held for too long, on `up` state, will be considered `click`.  
+`dragstart` - some taps if moved from initial position or have been held for some time, will enter `drag` state, and once be in `dragstart` state.  
+`drag` - once tap is in `dragstart` state, it will be in `drag` state till the end of a tap.  
 `dragend` - if tap is in `drag` state, on `up` state instead of `click` it will be in `dragend` state.
 
 `up` - every tap ends with `up` state.
