@@ -9,6 +9,9 @@ Providing sync access instead of event based, for best usage in real-time applic
 
 ## :rocket: Install
 
+```bash
+npm install mr-observer
+```
 
 ```html
 <script type='module' src='mr-tap.module.min.js'></script>
