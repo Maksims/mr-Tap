@@ -71,7 +71,7 @@ requestAnimationFrame(update);
 All taps:
 ```js
 // Taps - is an iterator
-for(const tap in taps) {
+for(const tap of taps) {
     // all taps
 }
 ```
@@ -79,7 +79,7 @@ for(const tap in taps) {
 Specific state taps, e.g. clicks:
 
 ```js
-for(const tap in taps.click) {
+for(const tap of taps.click) {
     // taps that are only clicks
 }
 ```
