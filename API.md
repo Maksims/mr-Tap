@@ -115,7 +115,7 @@ function update() {    requestAnimationFrame(update);    // update taps on ea
 | dragend | <code>boolean</code> | True when tap is ended dragging. It will be in that state only if previously was in `dragstart`, and tap will be removed after. |
 | timestamp | <code>boolean</code> | Milliseconds timestamp of when tap has started. |
 | mouse | <code>boolean</code> | True when tap originated from mouse input. |
-| button | <code>number</code> | A button number of a mouse that tap originated from. |
+| button | <code>null</code> \| <code>number</code> | If originated from mouse, a button number, otherwise null. |
 | x | <code>number</code> | X current coordinate of a tap, where 0 - is left. |
 | y | <code>number</code> | Y current coordinate of a tap, where 0 - is top. |
 | sx | <code>number</code> | X coordinate of where tap started. |
