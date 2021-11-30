@@ -84,6 +84,16 @@ for(const tap of taps.click) {
 }
 ```
 
+Unique to mouse properties are also available:
+
+```js
+for(const tap of taps) {
+    if (tap.mouse && tap.button === 0) {
+        // applies to only taps originated from mouse
+        // and only from left mouse button
+    }
+}
+```
 
 ## Examples
 
