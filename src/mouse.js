@@ -24,6 +24,8 @@ class TapMouse {
         tap.change(evt);
         tap._sx = tap._lx = tap._x;
         tap._sy = tap._ly = tap._y;
+        tap._mouse = true;
+        tap._button = evt.button;
     }
 
     _onMouseMove(evt) {
