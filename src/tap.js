@@ -9,6 +9,8 @@
  * @property {boolean} drag True when tap is dragging. It will be in that state from `dragstart` till the end of a tap.
  * @property {boolean} dragend True when tap is ended dragging. It will be in that state only if previously was in `dragstart`, and tap will be removed after.
  * @property {boolean} timestamp Milliseconds timestamp of when tap has started.
+ * @property {boolean} mouse True when tap originated from mouse input.
+ * @property {null|number} button If originated from mouse, a button number, otherwise null.
  * @property {number} x X current coordinate of a tap, where 0 - is left.
  * @property {number} y Y current coordinate of a tap, where 0 - is top.
  * @property {number} sx X coordinate of where tap started.
@@ -71,6 +73,9 @@ class Tap {
 
         this._dx = 0;
         this._dy = 0;
+
+        this._mouse = false;
+        this._button = null;
 
         this._start = true;
         this._started = false;
@@ -165,6 +170,14 @@ class Tap {
 
     get timestamp() {
         return this._timestamp;
+    }
+
+    get mouse() {
+        return this._mouse;
+    }
+
+    get button() {
+        return this._button;
     }
 
     get x() {

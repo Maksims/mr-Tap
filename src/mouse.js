@@ -18,7 +18,8 @@ class TapMouse {
     }
 
     _onMouseDown(evt) {
-        const tap = new Tap(this._taps, -1);
+        const id = -evt.button - 1;
+        const tap = new Tap(this._taps, id);
         this._taps._index.set(tap.id, tap);
         tap.change(evt);
         tap._sx = tap._lx = tap._x;
@@ -26,13 +27,15 @@ class TapMouse {
     }
 
     _onMouseMove(evt) {
-        const tap = this._taps._index.get(-1);
-        if (! tap) return;
-        tap.change(evt);
+        for(const tap of this._taps._index.values()) {
+            if (! tap.mouse) continue;
+            tap.change(evt);
+        }
     }
 
     _onMouseUp(evt) {
-        const tap = this._taps._index.get(-1);
+        const id = -evt.button - 1;
+        const tap = this._taps._index.get(id);
         if (! tap) return;
         tap.change(evt);
         tap._release = true;
